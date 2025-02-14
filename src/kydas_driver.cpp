@@ -43,7 +43,7 @@ int KydasDriver::openComport() {
   tty.c_lflag = 0;     // no local mode
   tty.c_oflag = 0;     // no delays
   tty.c_cc[VMIN] = 0;  // no block on read (just returns 0)
-  tty.c_cc[VTIME] = 5; // time out time (in deciseconds) 5 = 0.5s
+  tty.c_cc[VTIME] = 0; // time out time (in deciseconds) 5 = 0.5s
 
   tty.c_iflag &= ~(IXON | IXOFF | IXANY); // disable xon/xoff control of io
   tty.c_cflag |= (CLOCAL | CREAD);   // ignore modem controls and enable read
